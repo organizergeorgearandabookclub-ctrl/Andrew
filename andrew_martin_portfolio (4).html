@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andrew Martin — Career Coach & CV Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0D1B2A; --navy-mid: #1B3050; --navy-light: #2A4A6B;
+  --gold: #C9A84C; --gold-light: #E8C97A; --gold-pale: #F5EDD6;
+  --cream: #FAFAF7; --white: #FFFFFF;
+  --text-dark: #0D1B2A; --text-mid: #3D5470; --text-muted: #7A90A8;
+  --border: #DDE4EC; --fb-blue: #1877F2;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text-dark); line-height: 1.6; }
+
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: var(--navy); padding: 0 4rem; display: flex; justify-content: space-between; align-items: center; height: 64px; border-bottom: 1px solid var(--navy-light); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--white); }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold-light); }
+.nav-fb { display: flex; align-items: center; gap: 6px; background: var(--fb-blue); color: #fff; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; }
+.nav-fb:hover { opacity: 0.88; }
+.nav-fb svg { width: 14px; height: 14px; fill: #fff; }
+
+/* HERO */
+.hero { background: var(--navy); padding: 100px 4rem 80px; display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); color: var(--gold-light); font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px; }
+.hero-eyebrow-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 500; line-height: 1.1; color: var(--white); letter-spacing: -0.5px; margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: var(--gold-light); }
+.hero-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 520px; margin-bottom: 32px; }
+.hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.btn-gold { background: var(--gold); color: var(--navy); border: none; padding: 13px 28px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); padding: 13px 28px; border-radius: 6px; font-size: 13px; font-weight: 400; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+.hero-email { font-size: 13px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 6px; text-decoration: none; margin-top: 20px; transition: color 0.2s; }
+.hero-email:hover { color: var(--gold-light); }
+.hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 32px; text-align: center; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 600; color: var(--navy); margin: 0 auto 20px; border: 3px solid rgba(201,168,76,0.4); }
+.hero-card-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.hero-card-title { font-size: 12px; color: var(--gold); font-weight: 500; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px; }
+.hero-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mini-stat { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 14px 10px; }
+.mini-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--gold-light); line-height: 1; }
+.mini-stat-label { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+/* SECTIONS */
+.section { padding: 80px 4rem; }
+.section-alt { background: var(--white); }
+.section-dark { background: var(--navy); }
+.section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 48px; }
+.section-label-text { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 500; white-space: nowrap; }
+.section-dark .section-label-text { color: var(--white); }
+.section-label-line { height: 1px; flex: 1; background: var(--border); }
+.section-dark .section-label-line { background: rgba(255,255,255,0.1); }
+.gold-accent { color: var(--gold); }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.service-card { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; transition: border-color 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--gold); opacity: 0; transition: opacity 0.2s; }
+.service-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.service-card:hover::before { opacity: 1; }
+.service-icon { width: 40px; height: 40px; background: var(--gold-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.service-icon svg { width: 20px; height: 20px; stroke: var(--navy); fill: none; stroke-width: 1.5; }
+.service-name { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.service-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; }
+.service-price { display: inline-block; margin-top: 16px; font-size: 18px; font-weight: 600; font-family: 'Cormorant Garamond', serif; color: var(--navy); }
+.service-price span { font-size: 13px; color: var(--gold); font-weight: 500; font-family: 'Outfit', sans-serif; margin-left: 4px; }
+
+/* PROCESS */
+.process-grid { display: flex; flex-direction: column; max-width: 680px; }
+.process-step { display: grid; grid-template-columns: 48px 1fr; gap: 24px; }
+.process-left { display: flex; flex-direction: column; align-items: center; }
+.step-circle { width: 48px; height: 48px; border-radius: 50%; background: var(--gold-pale); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--navy); flex-shrink: 0; }
+.step-connector { width: 1px; background: var(--border); flex: 1; margin: 6px 0; min-height: 32px; }
+.process-content { padding-bottom: 36px; padding-top: 10px; }
+.process-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.process-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+.process-desc a { color: var(--gold); text-decoration: none; }
+
+/* TESTIMONIALS - Large photo cards */
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.testimonial { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; transition: border-color 0.25s, transform 0.25s; }
+.testimonial:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-3px); }
+.t-photo-banner { width: 100%; height: 230px; position: relative; overflow: hidden; }
+.t-photo-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; transition: transform 0.5s; filter: contrast(1.05) saturate(0.95); }
+.testimonial:hover .t-photo-banner img { transform: scale(1.04); }
+.t-photo-banner::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 90px; background: linear-gradient(to bottom, transparent, rgba(13,27,42,0.97)); }
+.t-photo-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1B3050 0%, #0D1B2A 100%); font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: rgba(201,168,76,0.5); }
+.t-body { padding: 22px 24px 26px; }
+.stars { display: flex; gap: 3px; margin-bottom: 14px; }
+.star { width: 12px; height: 12px; background: var(--gold); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
+.testimonial-text { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.8; font-style: italic; margin-bottom: 18px; }
+.testimonial-author { display: flex; align-items: center; gap: 10px; }
+.t-dot { width: 3px; height: 28px; background: var(--gold); border-radius: 2px; flex-shrink: 0; }
+.t-name { font-size: 13px; font-weight: 600; color: var(--white); }
+.t-role { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+/* CV SAMPLE */
+.cv-section { padding: 80px 4rem; background: var(--cream); }
+.cv-wrapper { max-width: 780px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(13,27,42,0.08); }
+.cv-header { background: var(--navy); padding: 40px 48px; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 24px; }
+.cv-name { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 600; line-height: 1; color: var(--white); margin-bottom: 6px; }
+.cv-title-role { font-size: 14px; color: var(--gold); font-weight: 500; letter-spacing: 0.5px; margin-bottom: 16px; }
+.cv-contact-bar { display: flex; gap: 20px; flex-wrap: wrap; }
+.cv-contact-item { font-size: 12px; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 5px; }
+.cv-contact-item svg { width: 12px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.cv-badge-stack { display: flex; flex-direction: column; gap: 8px; text-align: right; }
+.cv-badge { background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35); color: var(--gold-light); font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+.cv-body { display: grid; grid-template-columns: 260px 1fr; min-height: 600px; }
+.cv-sidebar { background: #F3F6FA; padding: 32px 28px; border-right: 1px solid var(--border); }
+.cv-main { padding: 32px 36px; }
+.cv-section-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; margin-top: 28px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.cv-section-label:first-child { margin-top: 0; }
+.cv-skill { margin-bottom: 12px; }
+.cv-skill-name { font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 5px; }
+.cv-skill-bar { height: 4px; background: var(--border); border-radius: 2px; }
+.cv-skill-fill { height: 100%; background: var(--gold); border-radius: 2px; }
+.cv-tag { display: inline-block; background: var(--white); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-mid); padding: 3px 8px; margin: 3px 3px 0 0; }
+.cv-sidebar-item { margin-bottom: 10px; }
+.cv-sidebar-label { font-size: 10px; color: var(--text-muted); font-weight: 500; margin-bottom: 1px; }
+.cv-sidebar-value { font-size: 12px; color: var(--navy); }
+.cv-summary { font-size: 13px; color: var(--text-mid); line-height: 1.75; padding: 16px; background: #F8FAFB; border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; margin-bottom: 4px; }
+.cv-job { margin-bottom: 24px; }
+.cv-job-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 4px; }
+.cv-job-title { font-size: 14px; font-weight: 600; color: var(--navy); }
+.cv-job-date { font-size: 11px; color: var(--text-muted); white-space: nowrap; margin-left: 8px; }
+.cv-job-company { font-size: 12px; color: var(--gold); font-weight: 500; margin-bottom: 8px; }
+.cv-job-bullets { list-style: none; }
+.cv-job-bullets li { font-size: 12px; color: var(--text-mid); line-height: 1.65; padding-left: 14px; position: relative; margin-bottom: 4px; }
+.cv-job-bullets li::before { content: ''; position: absolute; left: 0; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.cv-edu { margin-bottom: 14px; }
+.cv-edu-degree { font-size: 13px; font-weight: 600; color: var(--navy); }
+.cv-edu-school { font-size: 12px; color: var(--text-mid); }
+.cv-edu-year { font-size: 11px; color: var(--text-muted); }
+.cv-sample-note { text-align: center; padding: 20px; background: var(--gold-pale); border-top: 1px solid var(--border); font-size: 12px; color: var(--text-mid); }
+.cv-sample-note strong { color: var(--navy); }
+
+/* ── CONTACT / ORDER FORM ── */
+.contact-section { padding: 80px 4rem; background: var(--white); }
+.contact-section .section-label { margin-bottom: 48px; }
+.contact-wrap {
+  max-width: 980px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 60px rgba(13,27,42,0.12);
+}
+/* Left panel */
+.contact-left { background: var(--navy); padding: 52px 44px; display: flex; flex-direction: column; gap: 32px; }
+.cl-top { }
+.cl-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.cl-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--white); line-height: 1.25; margin-bottom: 12px; }
+.cl-sub { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+.cl-services { display: flex; flex-direction: column; gap: 8px; }
+.cl-services-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+.cs-btn {
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 13px 16px;
+  cursor: pointer; transition: all 0.18s; user-select: none;
+}
+.cs-btn:hover { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.4); }
+.cs-btn.active { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+.cs-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.85); }
+.cs-price { font-size: 15px; font-weight: 600; color: var(--gold); font-family: 'Cormorant Garamond', serif; }
+.cl-direct { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; }
+.cl-direct-label { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 12px; }
+.cl-direct a { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.cl-direct a:hover { color: var(--gold-light); }
+.cl-direct a svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+/* Right panel */
+.contact-right { background: var(--white); padding: 52px 44px; }
+.contact-right h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+.contact-right .cr-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+.fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.fg label { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); }
+.fg input, .fg select, .fg textarea {
+  background: #F7F9FC; border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 12px 15px;
+  font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--navy);
+  outline: none; transition: border-color 0.2s, background 0.2s;
+  appearance: none; -webkit-appearance: none; width: 100%;
+}
+.fg input::placeholder, .fg textarea::placeholder { color: var(--text-muted); font-size: 13px; }
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); background: var(--white); }
+.fg select { cursor: pointer; }
+.fg select option { background: var(--white); color: var(--navy); }
+.fg textarea { resize: vertical; min-height: 100px; line-height: 1.65; }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg-row .fg { margin-bottom: 0; }
+.selected-service-tag {
+  display: none; align-items: center; gap: 8px;
+  background: var(--gold-pale); border: 1px solid var(--gold);
+  border-radius: 8px; padding: 10px 14px; margin-bottom: 16px;
+  font-size: 13px; font-weight: 500; color: var(--navy);
+}
+.selected-service-tag.show { display: flex; }
+.selected-service-tag svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.submit-btn {
+  width: 100%; margin-top: 8px;
+  background: var(--navy); color: var(--white);
+  border: none; border-radius: 10px; padding: 16px 28px;
+  font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: background 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.submit-btn:hover { background: #1B3050; }
+.submit-btn svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.form-note { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 10px; line-height: 1.65; }
+.error-shake { animation: shake 0.35s ease; border-color: #E24B4A !important; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)} }
+/* Success state */
+.form-success { display: none; text-align: center; padding: 48px 20px; }
+.success-check { width: 64px; height: 64px; border-radius: 50%; background: var(--gold-pale); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.success-check svg { width: 30px; height: 30px; stroke: var(--navy); fill: none; stroke-width: 2.5; }
+.form-success h4 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--navy); margin-bottom: 12px; }
+.form-success p { font-size: 14px; color: var(--text-mid); line-height: 1.8; }
+.form-success strong { color: var(--navy); }
+
+/* CTA */
+.cta-section { background: var(--navy); padding: 80px 4rem; text-align: center; }
+.cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 500; color: var(--white); margin-bottom: 12px; }
+.cta-section p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 8px; line-height: 1.7; }
+.cta-email-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-light); font-size: 18px; font-weight: 500; text-decoration: none; margin: 8px 0 28px; font-family: 'Cormorant Garamond', serif; transition: color 0.2s; }
+.cta-email-link:hover { color: var(--white); }
+.cta-email-link svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-fb { display: inline-flex; align-items: center; gap: 8px; background: var(--fb-blue); color: #fff; padding: 13px 28px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.btn-fb:hover { opacity: 0.88; }
+.btn-fb svg { width: 16px; height: 16px; fill: #fff; }
+
+/* FOOTER */
+footer { background: #080F17; padding: 28px 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.5); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 20px; align-items: center; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-light); }
+.footer-fb { display: flex; align-items: center; gap: 6px; background: var(--fb-blue); color: #fff; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 5px; text-decoration: none; }
+.footer-fb svg { width: 12px; height: 12px; fill: #fff; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+@media (max-width: 900px) {
+  nav, .hero { padding-left: 2rem; padding-right: 2rem; }
+  .nav-links { gap: 14px; }
+  .hero { grid-template-columns: 1fr; padding: 60px 2rem 50px; }
+  .hero-card { display: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
+  .contact-left, .contact-right { padding: 36px 28px; }
+  .section, .cv-section, .cta-section, .contact-section { padding: 60px 2rem; }
+  .cv-body { grid-template-columns: 1fr; }
+  .cv-sidebar { border-right: none; border-bottom: 1px solid var(--border); }
+  footer { padding: 24px 2rem; flex-direction: column; text-align: center; }
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Andrew <span>Martin</span></div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#cv-sample">CV Sample</a>
+    <a href="#order">Order Now</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.facebook.com/profile.php?id=61576408724226" target="_blank" rel="noopener" class="nav-fb">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      Follow
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>Available for new clients</div>
+    <h1>Career Coach &amp;<br><em>CV Specialist</em></h1>
+    <p class="hero-sub">I help professionals land their dream roles with compelling CVs, sharp personal branding, and confident interview strategies. Over 500 clients placed across leading companies and ambitious startups.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-gold">Order a service</a>
+      <a href="#cv-sample" class="btn-outline">View CV sample</a>
+    </div>
+    <a href="mailto:andrewcvhelp@gmail.com" class="hero-email">
+      <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      andrewcvhelp@gmail.com
+    </a>
+  </div>
+  <div class="hero-card">
+    <div class="avatar">AM</div>
+    <div class="hero-card-name">Andrew Martin</div>
+    <div class="hero-card-title">Career Coach · CV Specialist</div>
+    <div class="hero-card-stats">
+      <div class="mini-stat"><div class="mini-stat-num">500+</div><div class="mini-stat-label">Clients placed</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">94%</div><div class="mini-stat-label">Success rate</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">10</div><div class="mini-stat-label">Yrs experience</div></div>
+      <div class="mini-stat"><div class="mini-stat-num">£80+</div><div class="mini-stat-label">Starting from</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="section-label">
+    <div class="section-label-text">Services <span class="gold-accent">&amp; Pricing</span></div>
+    <div class="section-label-line"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+      <div class="service-name">CV Refinement</div>
+      <div class="service-desc">Polish and sharpen your existing CV — improved structure, wording, and ATS optimisation without a full rewrite.</div>
+      <div class="service-price">£100 <span>/ project</span></div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M5 8h14M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z"/></svg></div>
+      <div class="service-name">CV Rewrite</div>
+      <div class="service-desc">A professionally crafted CV written from scratch, tailored to your target role and industry.</div>
+      <div class="service-price">£150 <span>/ project</span></div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="service-name">Full CV + Cover Letter</div>
+      <div class="service-desc">Complete package — a full CV rewrite plus a tailored, compelling cover letter optimised for your target role.</div>
+      <div class="service-price">£250 <span>/ package</span></div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div class="service-name">LinkedIn Optimisation</div>
+      <div class="service-desc">Profile rewrite that boosts recruiter visibility, tells your story, and positions you as a top candidate.</div>
+      <div class="service-price">£80 <span>/ project</span></div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg></div>
+      <div class="service-name">Interview Coaching</div>
+      <div class="service-desc">One-to-one mock interviews with structured feedback, STAR technique training, and confidence-building strategies.</div>
+      <div class="service-price">£300 <span>/ session</span></div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+      <div class="service-name">Career Strategy</div>
+      <div class="service-desc">Full career audit, personal positioning strategy, and a detailed 90-day action plan to reach your next role.</div>
+      <div class="service-price">£500 <span>/ programme</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-label">
+    <div class="section-label-text">How it <span class="gold-accent">works</span></div>
+    <div class="section-label-line"></div>
+  </div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-left"><div class="step-circle">1</div><div class="step-connector"></div></div>
+      <div class="process-content">
+        <div class="process-title">Submit your enquiry</div>
+        <div class="process-desc">Use the order form below or email <a href="mailto:andrewcvhelp@gmail.com">andrewcvhelp@gmail.com</a> directly. Select your service and tell me about your career goals.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-left"><div class="step-circle">2</div><div class="step-connector"></div></div>
+      <div class="process-content">
+        <div class="process-title">Deep-dive questionnaire</div>
+        <div class="process-desc">I send you a detailed intake form to capture your full experience, key achievements, and career aspirations before writing begins.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-left"><div class="step-circle">3</div><div class="step-connector"></div></div>
+      <div class="process-content">
+        <div class="process-title">First draft delivery</div>
+        <div class="process-desc">Within 5 working days you receive your professionally crafted CV, cover letter, or strategy document ready to review.</div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-left"><div class="step-circle">4</div></div>
+      <div class="process-content">
+        <div class="process-title">Revisions &amp; sign-off</div>
+        <div class="process-desc">Two rounds of revisions included. We refine together until you are fully confident and ready to apply.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV SAMPLE -->
+<section class="cv-section" id="cv-sample">
+  <div class="section-label">
+    <div class="section-label-text">Sample <span class="gold-accent">CV</span></div>
+    <div class="section-label-line"></div>
+  </div>
+  <div class="cv-wrapper">
+    <div class="cv-header">
+      <div>
+        <div class="cv-name">Sarah J. Thompson</div>
+        <div class="cv-title-role">Senior Marketing Manager · Brand Strategy · Digital Growth</div>
+        <div class="cv-contact-bar">
+          <div class="cv-contact-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>s.thompson@email.com</div>
+          <div class="cv-contact-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+44 7700 900 123</div>
+          <div class="cv-contact-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, UK</div>
+          <div class="cv-contact-item"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>linkedin.com/in/sjthompson</div>
+        </div>
+      </div>
+      <div class="cv-badge-stack">
+        <div class="cv-badge">Open to opportunities</div>
+        <div class="cv-badge">B2B &amp; B2C</div>
+        <div class="cv-badge">7 yrs experience</div>
+      </div>
+    </div>
+    <div class="cv-body">
+      <div class="cv-sidebar">
+        <div class="cv-section-label">Core Skills</div>
+        <div class="cv-skill"><div class="cv-skill-name">Brand Strategy</div><div class="cv-skill-bar"><div class="cv-skill-fill" style="width:95%"></div></div></div>
+        <div class="cv-skill"><div class="cv-skill-name">Digital Marketing</div><div class="cv-skill-bar"><div class="cv-skill-fill" style="width:90%"></div></div></div>
+        <div class="cv-skill"><div class="cv-skill-name">Team Leadership</div><div class="cv-skill-bar"><div class="cv-skill-fill" style="width:85%"></div></div></div>
+        <div class="cv-skill"><div class="cv-skill-name">Campaign Management</div><div class="cv-skill-bar"><div class="cv-skill-fill" style="width:88%"></div></div></div>
+        <div class="cv-skill"><div class="cv-skill-name">Data Analysis</div><div class="cv-skill-bar"><div class="cv-skill-fill" style="width:75%"></div></div></div>
+        <div class="cv-section-label">Tools</div>
+        <div><span class="cv-tag">HubSpot</span><span class="cv-tag">Salesforce</span><span class="cv-tag">Google Ads</span><span class="cv-tag">Figma</span><span class="cv-tag">Tableau</span><span class="cv-tag">Mailchimp</span><span class="cv-tag">SEMrush</span></div>
+        <div class="cv-section-label">Education</div>
+        <div class="cv-edu"><div class="cv-edu-degree">BA Marketing &amp; Communications</div><div class="cv-edu-school">University of Leeds</div><div class="cv-edu-year">2014–2017 · First Class Honours</div></div>
+        <div class="cv-edu"><div class="cv-edu-degree">CIM Professional Diploma</div><div class="cv-edu-school">Chartered Institute of Marketing</div><div class="cv-edu-year">2019</div></div>
+        <div class="cv-section-label">Contact</div>
+        <div class="cv-sidebar-item"><div class="cv-sidebar-label">Email</div><div class="cv-sidebar-value">s.thompson@email.com</div></div>
+        <div class="cv-sidebar-item"><div class="cv-sidebar-label">Location</div><div class="cv-sidebar-value">London, UK (Hybrid)</div></div>
+        <div class="cv-sidebar-item"><div class="cv-sidebar-label">Right to work</div><div class="cv-sidebar-value">UK Citizen</div></div>
+      </div>
+      <div class="cv-main">
+        <div class="cv-section-label">Professional Summary</div>
+        <div class="cv-summary">Results-driven Senior Marketing Manager with 7 years of experience building and scaling brand strategies across FMCG and technology sectors. Proven track record of growing organic reach by 3× and delivering campaigns that exceed ROI targets by an average of 40%. Known for translating complex data into clear, creative strategies that move both brand metrics and commercial outcomes.</div>
+        <div class="cv-section-label">Experience</div>
+        <div class="cv-job">
+          <div class="cv-job-header"><div class="cv-job-title">Senior Marketing Manager</div><div class="cv-job-date">Jan 2021 – Present</div></div>
+          <div class="cv-job-company">Beacon Digital · London</div>
+          <ul class="cv-job-bullets">
+            <li>Led a team of 6 across brand, content, and performance marketing, overseeing a £1.2M annual budget.</li>
+            <li>Rebuilt the company's brand identity, resulting in a 67% increase in brand awareness scores within 12 months.</li>
+            <li>Launched 3 integrated campaigns generating £4.5M in pipeline revenue and exceeding lead targets by 55%.</li>
+            <li>Introduced data-driven attribution modelling that cut wasted spend by 28% year-on-year.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-header"><div class="cv-job-title">Marketing Manager</div><div class="cv-job-date">Mar 2019 – Dec 2020</div></div>
+          <div class="cv-job-company">Hartwell Consumer Goods · Manchester</div>
+          <ul class="cv-job-bullets">
+            <li>Managed end-to-end campaign delivery across digital, OOH, and retail channels for a portfolio of 4 FMCG brands.</li>
+            <li>Grew social media following from 12K to 87K across platforms through a strategic content and influencer programme.</li>
+            <li>Collaborated with sales to align GTM strategy, contributing to a 22% uplift in retail listings nationally.</li>
+          </ul>
+        </div>
+        <div class="cv-job">
+          <div class="cv-job-header"><div class="cv-job-title">Marketing Executive</div><div class="cv-job-date">Sep 2017 – Feb 2019</div></div>
+          <div class="cv-job-company">Limelight Agency · Leeds</div>
+          <ul class="cv-job-bullets">
+            <li>Supported strategy and execution for 8+ client accounts across healthcare, retail, and hospitality sectors.</li>
+            <li>Created content calendars, email campaigns, and monthly performance reports presented to senior stakeholders.</li>
+          </ul>
+        </div>
+        <div class="cv-section-label">Key Achievements</div>
+        <ul class="cv-job-bullets">
+          <li>Named Marketing Manager of the Year, Beacon Digital internal awards — 2022 &amp; 2023.</li>
+          <li>Speaker at MarTech Summit London 2023 on "Data-Led Brand Building at Scale".</li>
+          <li>Mentored 4 junior marketers, two of whom were promoted within 18 months.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cv-sample-note">
+      <strong>Sample CV by Andrew Martin</strong> — This illustrates the quality and standard you can expect. Your CV will be fully tailored to your experience and target role. · <a href="mailto:andrewcvhelp@gmail.com" style="color:var(--navy);">andrewcvhelp@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / CONTACT FORM -->
+<section class="contact-section" id="order">
+  <div class="section-label">
+    <div class="section-label-text">Place your <span class="gold-accent">order</span></div>
+    <div class="section-label-line"></div>
+  </div>
+  <div class="contact-wrap">
+
+    <!-- LEFT: clickable service picker -->
+    <div class="contact-left">
+      <div class="cl-top">
+        <div class="cl-eyebrow">Step 1 — Pick your service</div>
+        <div class="cl-title">Choose the package that's right for you</div>
+        <div class="cl-sub">Click any service to pre-fill the form. Andrew replies within 24 hours to confirm your order and get started.</div>
+      </div>
+      <div class="cl-services">
+        <div class="cl-services-label">Available services</div>
+        <div class="cs-btn" onclick="pickService(this,'CV Refinement','£100')">
+          <span class="cs-name">CV Refinement</span><span class="cs-price">£100</span>
+        </div>
+        <div class="cs-btn" onclick="pickService(this,'CV Rewrite','£150')">
+          <span class="cs-name">CV Rewrite</span><span class="cs-price">£150</span>
+        </div>
+        <div class="cs-btn" onclick="pickService(this,'Full CV + Cover Letter','£250')">
+          <span class="cs-name">Full CV + Cover Letter</span><span class="cs-price">£250</span>
+        </div>
+        <div class="cs-btn" onclick="pickService(this,'LinkedIn Optimisation','£80')">
+          <span class="cs-name">LinkedIn Optimisation</span><span class="cs-price">£80</span>
+        </div>
+        <div class="cs-btn" onclick="pickService(this,'Interview Coaching','£300')">
+          <span class="cs-name">Interview Coaching</span><span class="cs-price">£300</span>
+        </div>
+        <div class="cs-btn" onclick="pickService(this,'Career Strategy','£500')">
+          <span class="cs-name">Career Strategy</span><span class="cs-price">£500</span>
+        </div>
+      </div>
+      <div class="cl-direct">
+        <div class="cl-direct-label">Or reach me directly</div>
+        <a href="mailto:andrewcvhelp@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          andrewcvhelp@gmail.com
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61576408724226" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" style="stroke:var(--gold)!important;"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          Message on Facebook
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: the form -->
+    <div class="contact-right">
+      <div id="orderForm">
+        <h3>Your details</h3>
+        <p class="cr-sub">Fill in your details below — the more you share, the faster Andrew can get started for you.</p>
+
+        <div class="selected-service-tag" id="serviceTag">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span id="serviceTagText">Service selected</span>
+        </div>
+
+        <div class="fg-row">
+          <div class="fg">
+            <label for="of-fname">First name *</label>
+            <input type="text" id="of-fname" placeholder="James" autocomplete="given-name">
+          </div>
+          <div class="fg">
+            <label for="of-lname">Last name *</label>
+            <input type="text" id="of-lname" placeholder="Mitchell" autocomplete="family-name">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="of-email">Email address *</label>
+          <input type="email" id="of-email" placeholder="james@email.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label for="of-phone">Phone number (optional)</label>
+          <input type="tel" id="of-phone" placeholder="+44 7700 000 000" autocomplete="tel">
+        </div>
+        <div class="fg">
+          <label for="of-service">Service you want to order *</label>
+          <select id="of-service">
+            <option value="" disabled selected>Select a service...</option>
+            <option value="CV Refinement — £100">CV Refinement — £100</option>
+            <option value="CV Rewrite — £150">CV Rewrite — £150</option>
+            <option value="Full CV + Cover Letter — £250">Full CV + Cover Letter — £250</option>
+            <option value="LinkedIn Optimisation — £80">LinkedIn Optimisation — £80</option>
+            <option value="Interview Coaching — £300">Interview Coaching — £300</option>
+            <option value="Career Strategy — £500">Career Strategy — £500</option>
+            <option value="Not sure yet — I'd like advice">Not sure yet — I'd like advice</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="of-msg">Tell Andrew about your situation *</label>
+          <textarea id="of-msg" placeholder="e.g. I'm a project manager with 5 years' experience looking to move into tech. My CV hasn't been updated in 3 years and I need a full rewrite targeting senior roles at FAANG companies..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="sendOrder()">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send my order to Andrew
+        </button>
+        <p class="form-note">✓ Andrew replies within 24 hours &nbsp;·&nbsp; ✓ No payment until you approve the work &nbsp;·&nbsp; ✓ Two free revisions included</p>
+      </div>
+
+      <!-- Success message -->
+      <div class="form-success" id="orderSuccess">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Order sent successfully!</h4>
+        <p>
+          Thank you — Andrew has received your enquiry and will reply to<br>
+          <strong id="confirmEmailDisplay"></strong><br><br>
+          within 24 hours to confirm your order and next steps.<br><br>
+          In the meantime feel free to <a href="https://www.facebook.com/profile.php?id=61576408724226" target="_blank" style="color:var(--gold);text-decoration:none;">follow Andrew on Facebook</a> for career tips.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-dark" id="testimonials">
+  <div class="section-label">
+    <div class="section-label-text" style="color:#fff;">Client <span class="gold-accent">stories</span></div>
+    <div class="section-label-line"></div>
+  </div>
+  <div class="testimonials-grid">
+
+    <div class="testimonial">
+      <div class="t-photo-banner">
+        <!-- Real Unsplash photo: professional man, Josef Gonzalez -->
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=460&fit=crop&crop=faces,top&auto=format&q=85" alt="James Mitchell" onerror="this.outerHTML='<div class=t-photo-fallback>JM</div>'">
+      </div>
+      <div class="t-body">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <div class="testimonial-text">"Andrew completely transformed my CV. Within two weeks I had three interviews — one led to a role with a 40% salary increase. Worth every penny."</div>
+        <div class="testimonial-author">
+          <div class="t-dot"></div>
+          <div><div class="t-name">James Mitchell</div><div class="t-role">Senior Engineer → Tech Lead, KPMG</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="t-photo-banner">
+        <!-- Real Unsplash photo: professional woman smiling, Amy Hirschi -->
+        <img src="https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=700&h=460&fit=crop&crop=faces,top&auto=format&q=85" alt="Sophia Park" onerror="this.outerHTML='<div class=t-photo-fallback>SP</div>'">
+      </div>
+      <div class="t-body">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <div class="testimonial-text">"The interview coaching sessions were invaluable. Andrew gave me frameworks I still use today. I went from stumbling over answers to landing a director role."</div>
+        <div class="testimonial-author">
+          <div class="t-dot"></div>
+          <div><div class="t-name">Sophia Park</div><div class="t-role">Manager → Director, Unilever</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="t-photo-banner">
+        <!-- Real Unsplash photo: professional woman, Christina @ wocintechchat -->
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=700&h=460&fit=crop&crop=faces,top&auto=format&q=85" alt="Rachel Okafor" onerror="this.outerHTML='<div class=t-photo-fallback>RO</div>'">
+      </div>
+      <div class="t-body">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <div class="testimonial-text">"Career pivoting felt impossible until I worked with Andrew. His strategy sessions helped me reframe my experience and land a role in a completely new industry."</div>
+        <div class="testimonial-author">
+          <div class="t-dot"></div>
+          <div><div class="t-name">Rachel Okafor</div><div class="t-role">Marketing → UX Research, Spotify</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="t-photo-banner">
+        <!-- Real Unsplash photo: confident professional woman, Michael Dam -->
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=700&h=460&fit=crop&crop=faces,top&auto=format&q=85" alt="Laura Hayes" onerror="this.outerHTML='<div class=t-photo-fallback>LH</div>'">
+      </div>
+      <div class="t-body">
+        <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+        <div class="testimonial-text">"I had been applying for months with no responses. After Andrew rewrote my CV and LinkedIn profile, I had recruiter messages within days. Genuinely life-changing."</div>
+        <div class="testimonial-author">
+          <div class="t-dot"></div>
+          <div><div class="t-name">Laura Hayes</div><div class="t-role">Operations Manager → Head of Ops, Deloitte</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to land your next role?</h2>
+  <p>Get in touch and let's build a CV that gets you noticed.</p>
+  <a href="mailto:andrewcvhelp@gmail.com" class="cta-email-link">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    andrewcvhelp@gmail.com
+  </a>
+  <br>
+  <div class="cta-buttons">
+    <a href="mailto:andrewcvhelp@gmail.com" class="btn-gold" style="font-size:14px;padding:14px 36px;">Email Andrew</a>
+    <a href="https://www.facebook.com/profile.php?id=61576408724226" target="_blank" rel="noopener" class="btn-fb">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      Follow on Facebook
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Andrew <span>Martin</span></div>
+  <div class="footer-links">
+    <a href="mailto:andrewcvhelp@gmail.com">andrewcvhelp@gmail.com</a>
+    <a href="https://www.facebook.com/profile.php?id=61576408724226" target="_blank" rel="noopener" class="footer-fb">
+      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      Facebook
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 Andrew Martin · Career Coach &amp; CV Specialist</div>
+</footer>
+
+<script>
+/* ── Service picker: click left panel button → highlight + pre-fill dropdown + show tag ── */
+function pickService(btn, name, price) {
+  document.querySelectorAll('.cs-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const sel = document.getElementById('of-service');
+  const targetVal = name + ' — ' + price;
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === targetVal) { sel.selectedIndex = i; break; }
+  }
+
+  const tag = document.getElementById('serviceTag');
+  document.getElementById('serviceTagText').textContent = name + ' — ' + price + ' selected';
+  tag.classList.add('show');
+
+  document.getElementById('contact-right') || document.getElementById('of-fname').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ── Form validation helper ── */
+function shake(id) {
+  const el = document.getElementById(id);
+  el.classList.remove('error-shake');
+  void el.offsetWidth;
+  el.classList.add('error-shake');
+  el.focus();
+  setTimeout(() => el.classList.remove('error-shake'), 500);
+}
+
+/* ── Send order via Formspree → lands directly in andrewcvhelp@gmail.com ── */
+async function sendOrder() {
+  const fname   = document.getElementById('of-fname').value.trim();
+  const lname   = document.getElementById('of-lname').value.trim();
+  const email   = document.getElementById('of-email').value.trim();
+  const phone   = document.getElementById('of-phone').value.trim();
+  const service = document.getElementById('of-service').value;
+  const msg     = document.getElementById('of-msg').value.trim();
+
+  if (!fname)                         { shake('of-fname');   return; }
+  if (!email || !email.includes('@')) { shake('of-email');   return; }
+  if (!service)                       { shake('of-service'); return; }
+  if (!msg)                           { shake('of-msg');     return; }
+
+  const btn = document.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;animation:spin 1s linear infinite"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg> Sending...';
+
+  try {
+    const res = await fetch('https://formspree.io/f/xjkvqdpa' /* ← YOUR Formspree endpoint */, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject:     'NEW ORDER — ' + service + ' | ' + fname + ' ' + lname,
+        _replyto:     email,
+        name:         fname + ' ' + lname,
+        email:        email,
+        phone:        phone || 'Not provided',
+        service:      service,
+        message:      msg
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('confirmEmailDisplay').textContent = email;
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('orderSuccess').style.display = 'block';
+    } else {
+      const data = await res.json();
+      if (data.errors) {
+        btn.disabled = false;
+        btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send my order to Andrew';
+        alert('Submission failed. Please email andrewcvhelp@gmail.com directly.');
+      }
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:2;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send my order to Andrew';
+    alert('Network error. Please email andrewcvhelp@gmail.com directly.');
+  }
+}
+</script>
+</body>
+</html>
